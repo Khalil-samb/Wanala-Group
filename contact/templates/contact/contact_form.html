@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="relative bg-[#0d1330] pt-16 pb-32 px-6 overflow-hidden">
+  <div class="relative max-w-4xl mx-auto text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-5">Contactez-nous</h1>
+    <p class="text-gray-300 leading-7 max-w-2xl mx-auto mb-10">
+      L'excellence multi-services au cœur de votre développement. WANALA
+      Group rassemble l'expertise nécessaire pour propulser vos projets à
+      l'échelle internationale.
+    </p>
+
+    <!-- Pôles -->
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <div class="w-24 bg-[#141b3a] rounded-lg py-4 px-2 text-center">
+        <div class="w-9 h-9 mx-auto mb-2 rounded-full bg-blue-500/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 0h-12" />
+          </svg>
+        </div>
+        <p class="text-white text-[11px] font-medium">Mobility</p>
+      </div>
+      <div class="w-24 bg-[#141b3a] rounded-lg py-4 px-2 text-center">
+        <div class="w-9 h-9 mx-auto mb-2 rounded-full bg-emerald-500/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+        </div>
+        <p class="text-white text-[11px] font-medium">Solutions</p>
+      </div>
+      <div class="w-24 bg-[#141b3a] rounded-lg py-4 px-2 text-center">
+        <div class="w-9 h-9 mx-auto mb-2 rounded-full bg-purple-500/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21" />
+          </svg>
+        </div>
+        <p class="text-white text-[11px] font-medium">Immobilier</p>
+      </div>
+      <div class="w-24 bg-[#141b3a] rounded-lg py-4 px-2 text-center">
+        <div class="w-9 h-9 mx-auto mb-2 rounded-full bg-orange-500/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+          </svg>
+        </div>
+        <p class="text-white text-[11px] font-medium">Invest</p>
+      </div>
+      <div class="w-24 bg-[#141b3a] rounded-lg py-4 px-2 text-center">
+        <div class="w-9 h-9 mx-auto mb-2 rounded-full bg-rose-500/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c-1.657 0-3-4.03-3-9s1.343-9 3-9 3 4.03 3 9-1.343 9-3 9Zm-9-9h18" />
+          </svg>
+        </div>
+        <p class="text-white text-[11px] font-medium">International</p>
+      </div>
+    </div>
+
+    <a href="#contact-form" class="inline-flex items-center gap-2 bg-white text-[#0d1330] text-sm font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
+      Découvrir nos services
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <!-- Découpe diagonale en bas du hero -->
+  <div class="absolute left-0 right-0 -bottom-px h-16 bg-white" style="clip-path: polygon(0 100%, 100% 40%, 100% 100%);"></div>
+</section>
+
+<!-- FORMULAIRE + INFOS -->
+<section class="relative bg-white px-6 pb-20 -mt-16">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 items-start">
+
+    <!-- Formulaire -->
+    <div id="contact-form" class="md:col-span-2 bg-white border border-gray-100 rounded-2xl shadow-xl p-8">
+      <h2 class="text-xl font-semibold text-[#0d1330] mb-6">Envoyez-nous votre demande</h2>
+
+      <form method="post" class="wanala-contact-form">
+        {% csrf_token %}
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="id_nom_complet" class="block text-sm font-medium text-[#0d1330] mb-2">Nom complet</label>
+            {{ form.nom_complet }}
+          </div>
+          <div>
+            <label for="id_email" class="block text-sm font-medium text-[#0d1330] mb-2">Email professionnel</label>
+            {{ form.email }}
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="id_telephone" class="block text-sm font-medium text-[#0d1330] mb-2">Numéro Téléphone</label>
+            {{ form.telephone }}
+          </div>
+          <div>
+            <label for="id_adresse" class="block text-sm font-medium text-[#0d1330] mb-2">Adresse Postale</label>
+            {{ form.adresse }}
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="id_besoin" class="block text-sm font-medium text-[#0d1330] mb-2">Décrivez votre besoin</label>
+          {{ form.besoin }}
+        </div>
+
+        <div class="mb-8">
+          <label for="id_pole_concerne" class="block text-sm font-medium text-[#0d1330] mb-2">Pôle concerné</label>
+          {{ form.pole_concerne }}
+        </div>
+
+        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 transition text-white font-semibold py-3.5 rounded-lg">
+          Envoyer ma demande
+        </button>
+      </form>
+    </div>
+
+    <!-- Infos pratiques -->
+    <div class="bg-[#0d1330] rounded-2xl shadow-xl p-8 space-y-8">
+      <div class="flex gap-4">
+        <div class="w-10 h-10 shrink-0 rounded-full bg-white/10 flex items-center justify-center">
+          <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-1">Horaires</h3>
+          <p class="text-gray-400 text-sm leading-6">Lundi au vendredi :<br>9h00 - 18h00</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="w-10 h-10 shrink-0 rounded-full bg-white/10 flex items-center justify-center">
+          <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-1">Infos</h3>
+          <p class="text-gray-400 text-sm leading-6">contact@wanala-group.com<br>+221 77-XXX-XX-XX</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="w-10 h-10 shrink-0 rounded-full bg-white/10 flex items-center justify-center">
+          <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-1">Nos bureaux</h3>
+          <p class="text-gray-400 text-sm leading-6">Dakar, Sénégal<br>Plaisir, France</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .wanala-contact-form input[type="text"],
+  .wanala-contact-form input[type="email"],
+  .wanala-contact-form input[type="tel"],
+  .wanala-contact-form textarea,
+  .wanala-contact-form select {
+    width: 100%;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.875rem;
+    color: #0d1330;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .wanala-contact-form input::placeholder,
+  .wanala-contact-form textarea::placeholder {
+    color: #9ca3af;
+  }
+  .wanala-contact-form input:focus,
+  .wanala-contact-form textarea:focus,
+  .wanala-contact-form select:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+  }
+  .wanala-contact-form textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+</style>
+
+{% endblock %}

@@ -1,0 +1,430 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1600&auto=format&fit=crop"
+         alt="Équipe WANALA Solutions"
+         class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0d1330] via-[#0d1330]/90 to-[#0d1330]/40"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
+    <p class="inline-flex items-center gap-2 bg-white/10 text-amber-400 uppercase tracking-[0.2em] text-xs font-semibold mb-5 px-3 py-1.5 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      Pôle Solutions &amp; Hygiène
+    </p>
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+      WANALA<br>
+      <span class="text-amber-400">Solutions</span>
+    </h1>
+    <p class="text-slate-300 max-w-2xl text-lg leading-8 mb-10">
+      Chez WANALA Solutions, nous accompagnons les particuliers, les entreprises
+      et les collectivités avec des solutions multiservices sur mesure.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="#contact"
+         class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+        Obtenir un devis gratuit
+        <span>&rarr;</span>
+      </a>
+      <a href="#domaines"
+         class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition">
+        Voir nos expertises
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NOS DOMAINES D'INTERVENTION -->
+<section id="domaines" class="px-6 py-20 bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3 relative inline-block">
+          Nos Domaines d'Intervention
+          <span class="block w-14 h-1 bg-amber-500 rounded-full mt-3"></span>
+        </h2>
+        <p class="text-slate-500 leading-7 max-w-xl">
+          Des solutions de nettoyage spécialisées, adaptées aux contraintes de
+          chaque secteur et aux exigences de chaque client.
+        </p>
+      </div>
+      <div class="flex gap-2 shrink-0">
+        <button type="button" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-semibold hover:bg-slate-200 transition">Sénégal</button>
+        <button type="button" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-semibold hover:bg-slate-200 transition">France</button>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- 1. Nettoyage Particuliers -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-3">Nettoyage Particuliers</h3>
+        <p class="text-slate-500 text-sm leading-6 mb-4">
+          Entretien méticuleux de vos résidences, appartements et villas de
+          standing par un personnel discret et formé.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Remise en état avant ou après déménagement</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage de canapés, fauteuils et matelas</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage des vitres</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage des tapis, moquettes et rideaux</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage de cuisines et salles de bains</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Désinfection et assainissement des surfaces</li>
+        </ul>
+      </div>
+
+      <!-- 2. Solutions digitales -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 4h18M4 4h16v10a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-3">Solutions digitales</h3>
+        <p class="text-slate-500 text-sm leading-6 mb-4">
+          Accélérer votre croissance grâce à des solutions digitales
+          intelligentes et sur mesure.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Création de sites internet</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Développement d'applications web et mobiles</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Identité visuelle et branding</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Marketing digital et réseaux sociaux</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Référencement (SEO)</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Hébergement et maintenance</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Automatisation des processus</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Accompagnement à la transformation digitale</li>
+        </ul>
+      </div>
+
+      <!-- 3. Assistance opérationnelle -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-3">Assistance opérationnelle</h3>
+        <p class="text-slate-500 text-sm leading-6 mb-4">
+          Sécurisez vos activités grâce à des solutions d'accompagnement qui
+          garantissent la continuité, la conformité et la performance de vos
+          opérations au quotidien.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Gestion des opérations et coordination d'interventions</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Contrôle qualité des prestations</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Audit et amélioration des processus</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Gestion des risques opérationnels</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Continuité d'activité</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Suivi des prestations et reporting</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Coordination des prestataires</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Mise en conformité des procédures</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Assistance administrative et opérationnelle</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Accompagnement des équipes sur le terrain</li>
+        </ul>
+      </div>
+
+      <!-- 4. Services aux entreprises -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-3">Services aux entreprises</h3>
+        <p class="text-slate-500 text-sm leading-6 mb-4">
+          Accompagner les entreprises avec des solutions fiables, flexibles et
+          sur mesure afin d'améliorer leur performance, leur image et leur
+          efficacité opérationnelle.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage de bureaux et locaux professionnels</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage industriel et technique</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Facility Management</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Placement de personnel qualifié</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Maintenance et petits travaux</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage de vitres, façades et enseignes</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage de fin de chantier</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Solutions digitales et accompagnement numérique</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Externalisation de services</li>
+        </ul>
+      </div>
+
+      <!-- 5. Facility Management -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M6 21V10l6-5 6 5v11M9 21v-5h6v5" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-3">Facility Management</h3>
+        <p class="text-slate-500 text-sm leading-6 mb-4">
+          Offrir une gestion globale de vos services généraux afin d'améliorer
+          le confort, la sécurité et la performance de votre environnement de
+          travail.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Gestion multiservices des bâtiments</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage et entretien des locaux</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Maintenance technique de premier niveau</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Entretien des espaces verts</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage de vitres, façades et enseignes</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Nettoyage après travaux et remise en état</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Gestion logistique et manutention</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Contrôle qualité et suivi des prestations</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Gestion des déchets et des consommables</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Astreinte et interventions ponctuelles</li>
+        </ul>
+      </div>
+
+      <!-- 6. Placement de personnel -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-3">Placement de personnel</h3>
+        <p class="text-slate-500 text-sm leading-6 mb-4">
+          Vous fournir des collaborateurs compétents, fiables et rapidement
+          opérationnels afin d'accompagner durablement la croissance de votre
+          activité.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Agents d'entretien et de propreté</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Agents de services généraux</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Manutentionnaires et agents logistiques</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Chauffeurs et convoyeurs</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Personnel de ménage à domicile</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Personnel pour hôtels et résidences</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Personnel industriel et technique</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Agents polyvalents</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Personnel administratif</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Renfort d'équipes pour missions ponctuelles ou régulières</li>
+        </ul>
+      </div>
+
+      <!-- 7. Maintenance -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2-2 2.5-2.5z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-3">Maintenance</h3>
+        <p class="text-slate-500 text-sm leading-6 mb-4">
+          Prévenir les pannes, prolonger la durée de vie de vos installations
+          et assurer un environnement de travail fonctionnel, sécurisé et
+          performant grâce à des interventions rapides et de qualité.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Maintenance préventive</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Maintenance corrective</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Entretien des bâtiments et locaux</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Remplacement de petits équipements (éclairage, serrurerie, quincaillerie...)</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Petits travaux de plomberie</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Petites interventions électriques</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Travaux de peinture et de remise en état</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Montage et réparation de mobilier</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Entretien des espaces extérieurs</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Suivi technique et coordination des interventions</li>
+        </ul>
+      </div>
+
+      <!-- 8. Externalisation de services -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-3">Externalisation de services</h3>
+        <p class="text-slate-500 text-sm leading-6 mb-4">
+          Réduire vos coûts, gagner en flexibilité et améliorer votre
+          performance grâce à des solutions d'externalisation fiables,
+          personnalisées et pilotées par des professionnels.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Externalisation du personnel</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Externalisation des services de nettoyage</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Externalisation du Facility Management</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Externalisation de la maintenance</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Externalisation des services administratifs</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Externalisation des services logistiques</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Gestion complète des prestations multiservices</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Suivi, contrôle qualité et reporting</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Renfort d'équipes ponctuel ou permanent</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Solutions sur mesure adaptées à votre activité</li>
+          <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span>Traitement des sols</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE DE PRESTATIONS -->
+<section class="px-6 pb-20 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center">
+
+      <div class="relative rounded-xl overflow-hidden h-72">
+        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?q=80&w=900&auto=format&fit=crop"
+             alt="Produits d'entretien professionnels"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-x-0 bottom-0 bg-[#0d1330]/90 text-white p-5">
+          <h4 class="font-semibold mb-1">Notre Engagement Qualité</h4>
+          <p class="text-slate-300 text-sm leading-6">
+            Produits éco-responsables, personnel certifié et contrôle qualité
+            systématique après chaque intervention.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Catalogue de Prestations</h2>
+        <p class="text-slate-500 leading-7 mb-8">
+          Nous proposons une gamme complète de services techniques pour
+          assurer la pérennité et l'éclat de vos infrastructures.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-5 mb-8">
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 text-amber-500">✓</span>
+            <div>
+              <p class="font-semibold text-slate-900 text-sm">Dépoussiérage</p>
+              <p class="text-slate-500 text-xs">Mobilier, luminaires, plinthes</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 text-amber-500">✓</span>
+            <div>
+              <p class="font-semibold text-slate-900 text-sm">Nettoyage Sols</p>
+              <p class="text-slate-500 text-xs">Marbre, parquet, moquette</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 text-amber-500">✓</span>
+            <div>
+              <p class="font-semibold text-slate-900 text-sm">Vitrages</p>
+              <p class="text-slate-500 text-xs">Toutes hauteurs &amp; nacelles</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 text-amber-500">✓</span>
+            <div>
+              <p class="font-semibold text-slate-900 text-sm">Désinfection</p>
+              <p class="text-slate-500 text-xs">Points de contact, sanitaires</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 text-amber-500">✓</span>
+            <div>
+              <p class="font-semibold text-slate-900 text-sm">Cristallisation</p>
+              <p class="text-slate-500 text-xs">Traitement pierre naturelle</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 text-amber-500">✓</span>
+            <div>
+              <p class="font-semibold text-slate-900 text-sm">Gestion Déchets</p>
+              <p class="text-slate-500 text-xs">Tri sélectif &amp; évacuation</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 text-amber-500">✓</span>
+            <div>
+              <p class="font-semibold text-slate-900 text-sm">Blanchisserie</p>
+              <p class="text-slate-500 text-xs">Linge de maison &amp; rideaux</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 text-amber-500">✓</span>
+            <div>
+              <p class="font-semibold text-slate-900 text-sm">Approvisionnement</p>
+              <p class="text-slate-500 text-xs">Consommables hygiène</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 pt-6 border-t border-slate-200">
+          <div class="flex -space-x-3">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+          </div>
+          <p class="text-sm text-slate-500">
+            Plus de <span class="font-semibold text-slate-900">150 experts</span> dédiés à la propreté de vos espaces.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA CONTACT -->
+<section id="contact" class="px-6 pb-20 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="relative overflow-hidden rounded-2xl bg-[#0d1330] px-8 py-14 md:px-14">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1400&auto=format&fit=crop"
+             alt=""
+             class="w-full h-full object-cover opacity-20">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0d1330] via-[#0d1330]/95 to-[#0d1330]/60"></div>
+      </div>
+
+      <div class="relative max-w-xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+          Confiez-nous l'éclat de vos espaces
+        </h2>
+        <p class="text-slate-300 leading-7 mb-8">
+          Chaque espace est unique. Nos experts se déplacent pour évaluer vos
+          besoins et vous proposer un plan d'entretien sur-mesure, adapté à
+          votre budget et vos standards.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-8">
+          <a href="{% url 'poles:request_service' 'solutions' %}"
+             class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+            Demander un devis gratuit
+          </a>
+          <a href="#"
+             class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition">
+            Être rappelé par un conseiller
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-6 text-sm text-slate-300">
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Service Assuré
+          </span>
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4c8 0 12 4 16 12-8 0-12-4-16-12zM4 4c0 8 4 12 12 16" />
+            </svg>
+            Éco-responsable
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
