@@ -6,161 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wanala Group</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<style>
-  html { scroll-behavior: smooth; }
-
-  /* ===== Header ===== */
-  header {
-    transition: box-shadow .35s ease, padding .35s ease, background-color .35s ease;
-  }
-  header.is-scrolled {
-    box-shadow: 0 4px 18px rgba(22,27,51,0.08);
-  }
-  header.is-scrolled .header-inner {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-  }
-  .header-inner { transition: padding .35s ease; }
-
-  header a img {
-    transition: transform .3s ease;
-  }
-  header a:hover img {
-    transform: scale(1.05);
-  }
-
-  /* Nav links underline sweep */
-  .nav-link {
-    position: relative;
-    padding-bottom: 2px;
-  }
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 2px;
-    background-color: #f59e0b; /* amber-500 */
-    transition: width .3s ease;
-  }
-  .nav-link:hover::after,
-  .nav-link.font-semibold::after {
-    width: 100%;
-  }
-
-  /* Accent bar under logo */
-  .accent-bar {
-    transition: width .4s ease;
-  }
-  header:hover .accent-bar {
-    width: 3.5rem;
-  }
-
-  /* CTA button */
-  .cta-btn {
-    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
-  }
-  .cta-btn:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(245,158,11,0.35);
-  }
-  .cta-btn:active {
-    transform: translateY(0) scale(0.98);
-  }
-
-  /* Mobile menu */
-  .mobile-nav {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .4s ease;
-  }
-  .mobile-nav.open {
-    max-height: 28rem;
-  }
-  .mobile-nav a {
-    opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity .35s ease, transform .35s ease;
-  }
-  .mobile-nav.open a {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .mobile-nav.open a:nth-child(1) { transition-delay: .05s; }
-  .mobile-nav.open a:nth-child(2) { transition-delay: .1s; }
-  .mobile-nav.open a:nth-child(3) { transition-delay: .15s; }
-  .mobile-nav.open a:nth-child(4) { transition-delay: .2s; }
-  .mobile-nav.open a:nth-child(5) { transition-delay: .25s; }
-  .mobile-nav.open a:nth-child(6) { transition-delay: .3s; }
-  .mobile-nav.open a:nth-child(7) { transition-delay: .35s; }
-
-  .burger-line {
-    transition: transform .3s ease, opacity .3s ease;
-    transform-origin: center;
-  }
-  .burger-open .burger-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .burger-open .burger-line:nth-child(2) { opacity: 0; }
-  .burger-open .burger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  /* ===== Scroll reveal (Intersection Observer) ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .7s ease, transform .7s ease;
-  }
-  .reveal.reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-delay-1 { transition-delay: .1s; }
-  .reveal-delay-2 { transition-delay: .2s; }
-  .reveal-delay-3 { transition-delay: .3s; }
-  .reveal-delay-4 { transition-delay: .4s; }
-
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .fade-in-up { animation: fadeInUp .8s ease both; }
-
-  /* ===== Footer ===== */
-  footer a {
-    transition: color .25s ease, transform .25s ease;
-  }
-  footer .social-icon {
-    transition: background-color .25s ease, transform .3s ease;
-  }
-  footer .social-icon:hover {
-    background-color: #f59e0b;
-    transform: translateY(-3px) scale(1.08);
-  }
-  footer li a:hover {
-    transform: translateX(3px);
-    display: inline-block;
-  }
-  footer img {
-    transition: transform .3s ease, filter .3s ease;
-  }
-  footer img:hover {
-    transform: scale(1.04);
-  }
-
-  /* Respect reduced motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      transition-duration: 0.001ms !important;
-    }
-  }
-</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body class="bg-white text-slate-800">
 
+<a href="https://wa.me/221784751639?text=Bonjour%20Wanala%20Group%2C%20je%20souhaite%20obtenir%20plus%20d'informations%20sur%20vos%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contacter Wanala Group sur WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 <!-- ===== HEADER ===== -->
-<header id="site-header" class="bg-gray-50 border-b-2 border-[#161b33] relative sticky top-0 z-50">
+<header id="site-header" class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
     <div class="header-inner max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
 
         <!-- Logo (pictogramme) -->
@@ -170,14 +26,14 @@
 
         <!-- Navigation centrale (desktop) -->
         <nav class="hidden lg:flex items-center gap-6 text-sm font-medium flex-wrap">
-            <a href="{% url 'core:home' %}" class="nav-link text-slate-900 font-semibold">Accueil</a>
-            <a href="{% url 'poles:mobility' %}" class="nav-link text-slate-600 hover:text-slate-900">Mobility</a>
-            <a href="{% url 'poles:solutions' %}" class="nav-link text-slate-600 hover:text-slate-900">Solutions</a>
-            <a href="{% url 'poles:immobilier' %}" class="nav-link text-slate-600 hover:text-slate-900">Immobilier</a>
-            <a href="{% url 'poles:invest' %}" class="nav-link text-slate-600 hover:text-slate-900">Invest</a>
-            <a href="{% url 'poles:international' %}" class="nav-link text-slate-600 hover:text-slate-900">International</a>
-            <a href="{% url 'core:about' %}" class="nav-link text-slate-600 hover:text-slate-900">À Propos</a>
-            <a href="{% url 'contact:contact' %}" class="nav-link text-slate-600 hover:text-slate-900">Contact</a>
+            <a href="{% url 'core:home' %}" class="nav-link {% if request.resolver_match.view_name == 'core:home' %}active text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Accueil</a>
+            <a href="{% url 'poles:mobility' %}" class="nav-link {% if request.resolver_match.view_name == 'poles:mobility' %}active text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Mobility</a>
+            <a href="{% url 'poles:solutions' %}" class="nav-link {% if request.resolver_match.view_name == 'poles:solutions' %}active text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Solutions</a>
+            <a href="{% url 'poles:immobilier' %}" class="nav-link {% if request.resolver_match.view_name == 'poles:immobilier' %}active text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Immobilier</a>
+            <a href="{% url 'poles:invest' %}" class="nav-link {% if request.resolver_match.view_name == 'poles:invest' %}active text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Invest</a>
+            <a href="{% url 'poles:international' %}" class="nav-link {% if request.resolver_match.view_name == 'poles:international' %}active text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">International</a>
+            <a href="{% url 'core:about' %}" class="nav-link {% if request.resolver_match.view_name == 'core:about' %}active text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">À Propos</a>
+            <a href="{% url 'contact:contact' %}" class="nav-link {% if request.resolver_match.view_name == 'contact:contact' %}active text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Contact</a>
         </nav>
 
         <div class="flex items-center gap-3">
@@ -199,14 +55,14 @@
     <!-- Navigation mobile -->
     <div id="mobile-nav" class="mobile-nav lg:hidden bg-gray-50 border-t border-gray-200">
         <nav class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
-            <a href="{% url 'core:home' %}" class="text-slate-900 font-semibold">Accueil</a>
-            <a href="{% url 'poles:mobility' %}" class="text-slate-600 hover:text-slate-900">Mobility</a>
-            <a href="{% url 'poles:solutions' %}" class="text-slate-600 hover:text-slate-900">Solutions</a>
-            <a href="{% url 'poles:immobilier' %}" class="text-slate-600 hover:text-slate-900">Immobilier</a>
-            <a href="{% url 'poles:invest' %}" class="text-slate-600 hover:text-slate-900">Invest</a>
-            <a href="{% url 'poles:international' %}" class="text-slate-600 hover:text-slate-900">International</a>
-            <a href="{% url 'core:about' %}" class="text-slate-600 hover:text-slate-900">À Propos</a>
-            <a href="{% url 'contact:contact' %}" class="text-amber-600 font-semibold">Contact</a>
+            <a href="{% url 'core:home' %}" class="{% if request.resolver_match.view_name == 'core:home' %}text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Accueil</a>
+            <a href="{% url 'poles:mobility' %}" class="{% if request.resolver_match.view_name == 'poles:mobility' %}text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Mobility</a>
+            <a href="{% url 'poles:solutions' %}" class="{% if request.resolver_match.view_name == 'poles:solutions' %}text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Solutions</a>
+            <a href="{% url 'poles:immobilier' %}" class="{% if request.resolver_match.view_name == 'poles:immobilier' %}text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Immobilier</a>
+            <a href="{% url 'poles:invest' %}" class="{% if request.resolver_match.view_name == 'poles:invest' %}text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Invest</a>
+            <a href="{% url 'poles:international' %}" class="{% if request.resolver_match.view_name == 'poles:international' %}text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">International</a>
+            <a href="{% url 'core:about' %}" class="{% if request.resolver_match.view_name == 'core:about' %}text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">À Propos</a>
+            <a href="{% url 'contact:contact' %}" class="{% if request.resolver_match.view_name == 'contact:contact' %}text-slate-900 font-semibold{% else %}text-slate-600 hover:text-slate-900{% endif %}">Contact</a>
         </nav>
     </div>
 
@@ -221,77 +77,79 @@
 </main>
 
 <!-- ===== FOOTER ===== -->
-<footer class="bg-[#161b33] text-gray-300">
-    <div class="max-w-7xl mx-auto px-6 pt-14 pb-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+<footer class="text-gray-300">
+    <div class="max-w-7xl mx-auto px-6 py-6 md:py-8">
+        <div class="footer-card rounded-2xl px-6 md:px-8 py-8 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
-        <!-- Colonne logo + description -->
-        <div class="reveal">
-            <img src="{% static 'images/logo-combine.png' %}" alt="Wanala Group" class="h-10 w-auto mb-4">
-            <p class="text-sm text-gray-400 leading-relaxed max-w-xs">
-                Une solution pour chaque besoin. L'excellence multi-activité au cœur
-                de votre développement, de la France à l'international.
-            </p>
-            <div class="flex gap-3 mt-5">
-                <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
-                    <i class="fab fa-linkedin-in text-sm"></i>
-                </a>
-                <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
-                    <i class="fab fa-twitter text-sm"></i>
-                </a>
-                <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
-                    <i class="fab fa-instagram text-sm"></i>
-                </a>
+            <!-- Colonne logo + description -->
+            <div class="reveal">
+                <img src="{% static 'images/logo-combine.png' %}" alt="Wanala Group" class="h-10 w-auto mb-4">
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xs">
+                    Une solution pour chaque besoin. L'excellence multi-activité au cœur
+                    de votre développement, de la France à l'international.
+                </p>
+                <div class="flex gap-3 mt-5">
+                    <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
+                        <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+                    <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
+                        <i class="fab fa-twitter text-sm"></i>
+                    </a>
+                    <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
+                        <i class="fab fa-instagram text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colonne liens rapides -->
+            <div class="reveal reveal-delay-1">
+                <h3 class="text-white font-semibold mb-4">Liens Rapides</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="{% url 'core:home' %}" class="footer-link hover:text-white">Accueil</a></li>
+                    <li><a href="{% url 'poles:mobility' %}" class="footer-link hover:text-white">Mobility</a></li>
+                    <li><a href="{% url 'poles:solutions' %}" class="footer-link hover:text-white">Solutions</a></li>
+                    <li><a href="{% url 'poles:immobilier' %}" class="footer-link hover:text-white">Immobilier</a></li>
+                    <li><a href="{% url 'poles:invest' %}" class="footer-link hover:text-white">Invest</a></li>
+                    <li><a href="{% url 'poles:international' %}" class="footer-link hover:text-white">International</a></li>
+                    <li><a href="{% url 'core:about' %}" class="footer-link hover:text-white">À Propos</a></li>
+                    <li><a href="{% url 'contact:contact' %}" class="footer-link hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne bureaux -->
+            <div class="reveal reveal-delay-2">
+                <h3 class="text-white font-semibold mb-4">Bureaux</h3>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex gap-2">
+                        <i class="fas fa-map-marker-alt text-amber-500 mt-1"></i>
+                        <div>
+                            <p class="text-white font-medium">Dakar, Sénégal</p>
+                            <p class="text-gray-400">Villa 8607/B Sicap sacré cœur 2</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <i class="fas fa-map-marker-alt text-amber-500 mt-1"></i>
+                        <div>
+                            <p class="text-white font-medium">Paris, France</p>
+                            <p class="text-gray-400">33 Rue du Petit Bontemps, 78370 Plaisir</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2 items-center">
+                        <i class="fas fa-envelope text-amber-500"></i>
+                        <a href="mailto:contact@wanala.fr" class="underline hover:text-white">contact@wanala.fr</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <!-- Colonne liens rapides -->
-        <div class="reveal reveal-delay-1">
-            <h3 class="text-white font-semibold mb-4">Liens Rapides</h3>
-            <ul class="space-y-3 text-sm">
-                <li><a href="{% url 'core:home' %}" class="hover:text-white">Accueil</a></li>
-                <li><a href="{% url 'poles:mobility' %}" class="hover:text-white">Mobility</a></li>
-                <li><a href="{% url 'poles:solutions' %}" class="hover:text-white">Solutions</a></li>
-                <li><a href="{% url 'poles:immobilier' %}" class="hover:text-white">Immobilier</a></li>
-                <li><a href="{% url 'poles:invest' %}" class="hover:text-white">Invest</a></li>
-                <li><a href="{% url 'poles:international' %}" class="hover:text-white">International</a></li>
-                <li><a href="{% url 'core:about' %}" class="hover:text-white">À Propos</a></li>
-                <li><a href="{% url 'contact:contact' %}" class="hover:text-white">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- Colonne bureaux -->
-        <div class="reveal reveal-delay-2">
-            <h3 class="text-white font-semibold mb-4">Bureaux</h3>
-            <ul class="space-y-4 text-sm">
-                <li class="flex gap-2">
-                    <i class="fas fa-map-marker-alt text-amber-500 mt-1"></i>
-                    <div>
-                        <p class="text-white font-medium">Dakar, Sénégal</p>
-                        <p class="text-gray-400">Villa 8607/B Sicap sacré cœur 2</p>
-                    </div>
-                </li>
-                <li class="flex gap-2">
-                    <i class="fas fa-map-marker-alt text-amber-500 mt-1"></i>
-                    <div>
-                        <p class="text-white font-medium">Paris, France</p>
-                        <p class="text-gray-400">33 Rue du Petit Bontemps, 78370 Plaisir</p>
-                    </div>
-                </li>
-                <li class="flex gap-2 items-center">
-                    <i class="fas fa-envelope text-amber-500"></i>
-                    <a href="mailto:contact@wanala.fr" class="underline hover:text-white">contact@wanala.fr</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Bas de footer -->
-    <div class="border-t border-white/10 mt-10">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-2">
-            <p>© 2026 WANALA Group. Tous droits réservés.</p>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-white">Mentions légales</a>
-                <a href="#" class="hover:text-white">Politique de confidentialité</a>
+        <!-- Bas de footer -->
+        <div class="border-t border-white/10 mt-6 pt-5">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-2">
+                <p>© {% now "Y" %} WANALA Group. Tous droits réservés.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="footer-link hover:text-white">Mentions légales</a>
+                    <a href="#" class="footer-link hover:text-white">Politique de confidentialité</a>
+                </div>
             </div>
         </div>
     </div>
@@ -301,6 +159,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <script>
+ 
   // ===== Header: ombre + réduction au scroll =====
   const header = document.getElementById('site-header');
   const onScroll = () => {
