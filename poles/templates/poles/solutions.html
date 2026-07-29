@@ -2,38 +2,70 @@
 
 {% block content %}
 
+<style>
+    /* ===== Keyframes personnalisées ===== */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(28px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes kenBurns {
+        0%   { transform: scale(1); }
+        100% { transform: scale(1.1); }
+    }
+    @keyframes pulseRing {
+        0%   { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.35); }
+        70%  { box-shadow: 0 0 0 12px rgba(245, 158, 11, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+
+    /* Éléments révélés au scroll */
+    .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .reveal, .kb-zoom { transition: none !important; animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+</style>
+
 <!-- HERO -->
 <section class="relative overflow-hidden">
   <div class="absolute inset-0">
     <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1600&auto=format&fit=crop"
          alt="Équipe WANALA Solutions"
-         class="w-full h-full object-cover">
+         class="kb-zoom w-full h-full object-cover" style="animation: kenBurns 12s ease-out forwards;">
     <div class="absolute inset-0 bg-gradient-to-r from-[#0d1330] via-[#0d1330]/90 to-[#0d1330]/40"></div>
   </div>
 
   <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
-    <p class="inline-flex items-center gap-2 bg-white/10 text-amber-400 uppercase tracking-[0.2em] text-xs font-semibold mb-5 px-3 py-1.5 rounded-full">
+    <p class="inline-flex items-center gap-2 bg-white/10 text-amber-400 uppercase tracking-[0.2em] text-xs font-semibold mb-5 px-3 py-1.5 rounded-full opacity-0" style="animation: fadeInUp 0.8s ease-out 0.1s forwards;">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
       Pôle Solutions &amp; Hygiène
     </p>
-    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight opacity-0" style="animation: fadeInUp 0.8s ease-out 0.25s forwards;">
       WANALA<br>
       <span class="text-amber-400">Solutions</span>
     </h1>
-    <p class="text-slate-300 max-w-2xl text-lg leading-8 mb-10">
+    <p class="text-slate-300 max-w-2xl text-lg leading-8 mb-10 opacity-0" style="animation: fadeInUp 0.8s ease-out 0.4s forwards;">
       Chez WANALA Solutions, nous accompagnons les particuliers, les entreprises
       et les collectivités avec des solutions multiservices sur mesure.
     </p>
-    <div class="flex flex-wrap gap-4">
+    <div class="flex flex-wrap gap-4 opacity-0" style="animation: fadeInUp 0.8s ease-out 0.55s forwards;">
       <a href="#contact"
-         class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+         class="group inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
         Obtenir un devis gratuit
-        <span>&rarr;</span>
+        <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
       </a>
       <a href="#domaines"
-         class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition">
+         class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300">
         Voir nos expertises
       </a>
     </div>
@@ -44,7 +76,7 @@
 <section id="domaines" class="px-6 py-20 bg-white">
   <div class="max-w-6xl mx-auto">
 
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+    <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
       <div>
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3 relative inline-block">
           Nos Domaines d'Intervention
@@ -56,16 +88,16 @@
         </p>
       </div>
       <div class="flex gap-2 shrink-0">
-        <button type="button" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-semibold hover:bg-slate-200 transition">Sénégal</button>
-        <button type="button" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-semibold hover:bg-slate-200 transition">France</button>
+        <button type="button" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-semibold hover:bg-slate-200 hover:scale-105 transition-all duration-300">Sénégal</button>
+        <button type="button" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-sm font-semibold hover:bg-slate-200 hover:scale-105 transition-all duration-300">France</button>
       </div>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
       <!-- 1. Nettoyage Particuliers -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+      <div class="reveal group bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="transition-delay: 0ms;">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10" />
           </svg>
@@ -86,8 +118,8 @@
       </div>
 
       <!-- 2. Solutions digitales -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+      <div class="reveal group bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="transition-delay: 60ms;">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 4h18M4 4h16v10a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
           </svg>
@@ -110,8 +142,8 @@
       </div>
 
       <!-- 3. Assistance opérationnelle -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+      <div class="reveal group bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="transition-delay: 120ms;">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z" />
@@ -138,8 +170,8 @@
       </div>
 
       <!-- 4. Services aux entreprises -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+      <div class="reveal group bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="transition-delay: 180ms;">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
           </svg>
@@ -164,8 +196,8 @@
       </div>
 
       <!-- 5. Facility Management -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+      <div class="reveal group bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="transition-delay: 0ms;">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M6 21V10l6-5 6 5v11M9 21v-5h6v5" />
           </svg>
@@ -191,8 +223,8 @@
       </div>
 
       <!-- 6. Placement de personnel -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+      <div class="reveal group bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="transition-delay: 60ms;">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5z" />
           </svg>
@@ -218,8 +250,8 @@
       </div>
 
       <!-- 7. Maintenance -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+      <div class="reveal group bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="transition-delay: 120ms;">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2-2 2.5-2.5z" />
           </svg>
@@ -245,8 +277,8 @@
       </div>
 
       <!-- 8. Externalisation de services -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5">
+      <div class="reveal group bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-amber-200 transition-all duration-300" style="transition-delay: 180ms;">
+        <div class="w-11 h-11 rounded-xl bg-[#0d1330] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
           </svg>
@@ -279,12 +311,12 @@
 <!-- CATALOGUE DE PRESTATIONS -->
 <section class="px-6 pb-20 bg-white">
   <div class="max-w-6xl mx-auto">
-    <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center">
+    <div class="reveal bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center hover:shadow-lg transition-shadow duration-500">
 
-      <div class="relative rounded-xl overflow-hidden h-72">
+      <div class="relative rounded-xl overflow-hidden h-72 group">
         <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?q=80&w=900&auto=format&fit=crop"
              alt="Produits d'entretien professionnels"
-             class="w-full h-full object-cover">
+             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
         <div class="absolute inset-x-0 bottom-0 bg-[#0d1330]/90 text-white p-5">
           <h4 class="font-semibold mb-1">Notre Engagement Qualité</h4>
           <p class="text-slate-300 text-sm leading-6">
@@ -302,56 +334,56 @@
         </p>
 
         <div class="grid sm:grid-cols-2 gap-x-8 gap-y-5 mb-8">
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
             <span class="mt-0.5 text-amber-500">✓</span>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Dépoussiérage</p>
               <p class="text-slate-500 text-xs">Mobilier, luminaires, plinthes</p>
             </div>
           </div>
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
             <span class="mt-0.5 text-amber-500">✓</span>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Nettoyage Sols</p>
               <p class="text-slate-500 text-xs">Marbre, parquet, moquette</p>
             </div>
           </div>
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
             <span class="mt-0.5 text-amber-500">✓</span>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Vitrages</p>
               <p class="text-slate-500 text-xs">Toutes hauteurs &amp; nacelles</p>
             </div>
           </div>
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
             <span class="mt-0.5 text-amber-500">✓</span>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Désinfection</p>
               <p class="text-slate-500 text-xs">Points de contact, sanitaires</p>
             </div>
           </div>
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
             <span class="mt-0.5 text-amber-500">✓</span>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Cristallisation</p>
               <p class="text-slate-500 text-xs">Traitement pierre naturelle</p>
             </div>
           </div>
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
             <span class="mt-0.5 text-amber-500">✓</span>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Gestion Déchets</p>
               <p class="text-slate-500 text-xs">Tri sélectif &amp; évacuation</p>
             </div>
           </div>
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
             <span class="mt-0.5 text-amber-500">✓</span>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Blanchisserie</p>
               <p class="text-slate-500 text-xs">Linge de maison &amp; rideaux</p>
             </div>
           </div>
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1">
             <span class="mt-0.5 text-amber-500">✓</span>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Approvisionnement</p>
@@ -362,9 +394,9 @@
 
         <div class="flex items-center gap-3 pt-6 border-t border-slate-200">
           <div class="flex -space-x-3">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover transition-transform duration-300 hover:scale-110 hover:z-10">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover transition-transform duration-300 hover:scale-110 hover:z-10">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover transition-transform duration-300 hover:scale-110 hover:z-10">
           </div>
           <p class="text-sm text-slate-500">
             Plus de <span class="font-semibold text-slate-900">150 experts</span> dédiés à la propreté de vos espaces.
@@ -379,7 +411,7 @@
 <!-- CTA CONTACT -->
 <section id="contact" class="px-6 pb-20 bg-white">
   <div class="max-w-6xl mx-auto">
-    <div class="relative overflow-hidden rounded-2xl bg-[#0d1330] px-8 py-14 md:px-14">
+    <div class="reveal relative overflow-hidden rounded-2xl bg-[#0d1330] px-8 py-14 md:px-14">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1400&auto=format&fit=crop"
              alt=""
@@ -398,12 +430,13 @@
         </p>
 
         <div class="flex flex-wrap gap-4 mb-8">
-          <a href="{% url 'poles:request_service' 'solutions' %}"
-             class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+          <a href="{% url 'poles:solutions' %}"
+             class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg hover:scale-105 transition-all duration-300"
+             style="animation: pulseRing 2.6s infinite;">
             Demander un devis gratuit
           </a>
           <a href="#"
-             class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition">
+             class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300">
             Être rappelé par un conseiller
           </a>
         </div>
@@ -426,5 +459,25 @@
     </div>
   </div>
 </section>
+
+<!-- SCRIPT : révélations au scroll -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(function (el) { observer.observe(el); });
+    } else {
+        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+});
+</script>
 
 {% endblock %}

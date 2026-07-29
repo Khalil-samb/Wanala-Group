@@ -7,39 +7,211 @@
 <title>Wanala Group</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+  html { scroll-behavior: smooth; }
+
+  /* ===== Header ===== */
+  header {
+    transition: box-shadow .35s ease, padding .35s ease, background-color .35s ease;
+  }
+  header.is-scrolled {
+    box-shadow: 0 4px 18px rgba(22,27,51,0.08);
+  }
+  header.is-scrolled .header-inner {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  .header-inner { transition: padding .35s ease; }
+
+  header a img {
+    transition: transform .3s ease;
+  }
+  header a:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Nav links underline sweep */
+  .nav-link {
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: #f59e0b; /* amber-500 */
+    transition: width .3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.font-semibold::after {
+    width: 100%;
+  }
+
+  /* Accent bar under logo */
+  .accent-bar {
+    transition: width .4s ease;
+  }
+  header:hover .accent-bar {
+    width: 3.5rem;
+  }
+
+  /* CTA button */
+  .cta-btn {
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(245,158,11,0.35);
+  }
+  .cta-btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Mobile menu */
+  .mobile-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+  }
+  .mobile-nav.open {
+    max-height: 28rem;
+  }
+  .mobile-nav a {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity .35s ease, transform .35s ease;
+  }
+  .mobile-nav.open a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .mobile-nav.open a:nth-child(1) { transition-delay: .05s; }
+  .mobile-nav.open a:nth-child(2) { transition-delay: .1s; }
+  .mobile-nav.open a:nth-child(3) { transition-delay: .15s; }
+  .mobile-nav.open a:nth-child(4) { transition-delay: .2s; }
+  .mobile-nav.open a:nth-child(5) { transition-delay: .25s; }
+  .mobile-nav.open a:nth-child(6) { transition-delay: .3s; }
+  .mobile-nav.open a:nth-child(7) { transition-delay: .35s; }
+
+  .burger-line {
+    transition: transform .3s ease, opacity .3s ease;
+    transform-origin: center;
+  }
+  .burger-open .burger-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger-open .burger-line:nth-child(2) { opacity: 0; }
+  .burger-open .burger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ===== Scroll reveal (Intersection Observer) ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+  .reveal-delay-4 { transition-delay: .4s; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in-up { animation: fadeInUp .8s ease both; }
+
+  /* ===== Footer ===== */
+  footer a {
+    transition: color .25s ease, transform .25s ease;
+  }
+  footer .social-icon {
+    transition: background-color .25s ease, transform .3s ease;
+  }
+  footer .social-icon:hover {
+    background-color: #f59e0b;
+    transform: translateY(-3px) scale(1.08);
+  }
+  footer li a:hover {
+    transform: translateX(3px);
+    display: inline-block;
+  }
+  footer img {
+    transition: transform .3s ease, filter .3s ease;
+  }
+  footer img:hover {
+    transform: scale(1.04);
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+</style>
 </head>
 <body class="bg-white text-slate-800">
 
 <!-- ===== HEADER ===== -->
-<header class="bg-gray-50 border-b-2 border-[#161b33] relative">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+<header id="site-header" class="bg-gray-50 border-b-2 border-[#161b33] relative sticky top-0 z-50">
+    <div class="header-inner max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
 
         <!-- Logo (pictogramme) -->
         <a href="{% url 'core:home' %}" class="flex items-center">
             <img src="{% static 'images/logo-icon.png' %}" alt="Wanala Group" class="h-10 w-auto">
         </a>
 
-        <!-- Navigation centrale -->
+        <!-- Navigation centrale (desktop) -->
         <nav class="hidden lg:flex items-center gap-6 text-sm font-medium flex-wrap">
-            <a href="{% url 'core:home' %}" class="text-slate-900 font-semibold">Accueil</a>
-            <a href="{% url 'poles:detail' 'mobility' %}" class="text-slate-600 hover:text-slate-900">Mobility</a>
-            <a href="{% url 'poles:detail' 'solutions' %}" class="text-slate-600 hover:text-slate-900">Solutions</a>
-            <a href="{% url 'poles:detail' 'immobilier' %}" class="text-slate-600 hover:text-slate-900">Immobilier</a>
-            <a href="{% url 'poles:detail' 'invest' %}" class="text-slate-600 hover:text-slate-900">Invest</a>
-            <a href="{% url 'poles:detail' 'international' %}" class="text-slate-600 hover:text-slate-900">International</a>
-            <a href="{% url 'core:about' %}" class="text-slate-600 hover:text-slate-900">À Propos</a>
-            <a href="{% url 'contact:contact' %}" class="text-slate-600 hover:text-slate-900">Contact</a>
+            <a href="{% url 'core:home' %}" class="nav-link text-slate-900 font-semibold">Accueil</a>
+            <a href="{% url 'poles:mobility' %}" class="nav-link text-slate-600 hover:text-slate-900">Mobility</a>
+            <a href="{% url 'poles:solutions' %}" class="nav-link text-slate-600 hover:text-slate-900">Solutions</a>
+            <a href="{% url 'poles:immobilier' %}" class="nav-link text-slate-600 hover:text-slate-900">Immobilier</a>
+            <a href="{% url 'poles:invest' %}" class="nav-link text-slate-600 hover:text-slate-900">Invest</a>
+            <a href="{% url 'poles:international' %}" class="nav-link text-slate-600 hover:text-slate-900">International</a>
+            <a href="{% url 'core:about' %}" class="nav-link text-slate-600 hover:text-slate-900">À Propos</a>
+            <a href="{% url 'contact:contact' %}" class="nav-link text-slate-600 hover:text-slate-900">Contact</a>
         </nav>
 
-        <!-- CTA -->
-        <a href="{% url 'contact:contact' %}"
-           class="bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">
-            Demander un devis
-        </a>
+        <div class="flex items-center gap-3">
+            <!-- CTA -->
+            <a href="{% url 'contact:contact' %}"
+               class="cta-btn hidden sm:inline-block bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full">
+                Demander un devis
+            </a>
+
+            <!-- Bouton menu mobile -->
+            <button id="menu-toggle" aria-label="Ouvrir le menu" class="lg:hidden flex flex-col justify-center gap-1.5 h-10 w-10">
+                <span class="burger-line block h-0.5 w-6 bg-slate-900 mx-auto"></span>
+                <span class="burger-line block h-0.5 w-6 bg-slate-900 mx-auto"></span>
+                <span class="burger-line block h-0.5 w-6 bg-slate-900 mx-auto"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation mobile -->
+    <div id="mobile-nav" class="mobile-nav lg:hidden bg-gray-50 border-t border-gray-200">
+        <nav class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
+            <a href="{% url 'core:home' %}" class="text-slate-900 font-semibold">Accueil</a>
+            <a href="{% url 'poles:mobility' %}" class="text-slate-600 hover:text-slate-900">Mobility</a>
+            <a href="{% url 'poles:solutions' %}" class="text-slate-600 hover:text-slate-900">Solutions</a>
+            <a href="{% url 'poles:immobilier' %}" class="text-slate-600 hover:text-slate-900">Immobilier</a>
+            <a href="{% url 'poles:invest' %}" class="text-slate-600 hover:text-slate-900">Invest</a>
+            <a href="{% url 'poles:international' %}" class="text-slate-600 hover:text-slate-900">International</a>
+            <a href="{% url 'core:about' %}" class="text-slate-600 hover:text-slate-900">À Propos</a>
+            <a href="{% url 'contact:contact' %}" class="text-amber-600 font-semibold">Contact</a>
+        </nav>
     </div>
 
     <!-- Petit accent doré sous le logo (indicateur page active) -->
-    <div class="absolute left-10 -bottom-[2px] h-[2px] w-10 bg-amber-500"></div>
+    <div class="accent-bar absolute left-10 -bottom-[2px] h-[2px] w-10 bg-amber-500"></div>
 </header>
 
 <!-- ===== CONTENU DE LA PAGE ===== -->
@@ -53,38 +225,42 @@
     <div class="max-w-7xl mx-auto px-6 pt-14 pb-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         <!-- Colonne logo + description -->
-        <div>
+        <div class="reveal">
             <img src="{% static 'images/logo-combine.png' %}" alt="Wanala Group" class="h-10 w-auto mb-4">
             <p class="text-sm text-gray-400 leading-relaxed max-w-xs">
                 Une solution pour chaque besoin. L'excellence multi-activité au cœur
                 de votre développement, de la France à l'international.
             </p>
             <div class="flex gap-3 mt-5">
-                <a href="#" class="h-9 w-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20">
+                <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
                     <i class="fab fa-linkedin-in text-sm"></i>
                 </a>
-                <a href="#" class="h-9 w-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20">
+                <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
                     <i class="fab fa-twitter text-sm"></i>
                 </a>
-                <a href="#" class="h-9 w-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20">
+                <a href="#" class="social-icon h-9 w-9 flex items-center justify-center rounded-full bg-white/10">
                     <i class="fab fa-instagram text-sm"></i>
                 </a>
             </div>
         </div>
 
         <!-- Colonne liens rapides -->
-        <div>
+        <div class="reveal reveal-delay-1">
             <h3 class="text-white font-semibold mb-4">Liens Rapides</h3>
             <ul class="space-y-3 text-sm">
                 <li><a href="{% url 'core:home' %}" class="hover:text-white">Accueil</a></li>
-                <li><a href="{% url 'poles:list' %}" class="hover:text-white">Nos Pôles</a></li>
+                <li><a href="{% url 'poles:mobility' %}" class="hover:text-white">Mobility</a></li>
+                <li><a href="{% url 'poles:solutions' %}" class="hover:text-white">Solutions</a></li>
+                <li><a href="{% url 'poles:immobilier' %}" class="hover:text-white">Immobilier</a></li>
+                <li><a href="{% url 'poles:invest' %}" class="hover:text-white">Invest</a></li>
+                <li><a href="{% url 'poles:international' %}" class="hover:text-white">International</a></li>
                 <li><a href="{% url 'core:about' %}" class="hover:text-white">À Propos</a></li>
                 <li><a href="{% url 'contact:contact' %}" class="hover:text-white">Contact</a></li>
             </ul>
         </div>
 
         <!-- Colonne bureaux -->
-        <div>
+        <div class="reveal reveal-delay-2">
             <h3 class="text-white font-semibold mb-4">Bureaux</h3>
             <ul class="space-y-4 text-sm">
                 <li class="flex gap-2">
@@ -123,6 +299,53 @@
 
 <!-- Icônes Font Awesome (linkedin, twitter, instagram, pin, email) -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script>
+  // ===== Header: ombre + réduction au scroll =====
+  const header = document.getElementById('site-header');
+  const onScroll = () => {
+    if (window.scrollY > 12) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ===== Menu mobile =====
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    menuToggle.classList.toggle('burger-open', isOpen);
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+  // Ferme le menu mobile après clic sur un lien
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      menuToggle.classList.remove('burger-open');
+    });
+  });
+
+  // ===== Scroll reveal via IntersectionObserver =====
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    // Fallback : tout afficher directement
+    revealEls.forEach(el => el.classList.add('reveal-visible'));
+  }
+</script>
 
 <script src="{% static 'js/app.js' %}"></script>
 </body>

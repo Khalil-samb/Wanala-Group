@@ -4,7 +4,9 @@ from . import views
 app_name = 'poles'
 
 urlpatterns = [
-    path('', views.list_poles, name='list'),
-    path('<slug:slug>/', views.detail, name='detail'),
-    path('<slug:slug>/request/', views.request_service, name='request_service'),
+    path('immobilier/', views.immobilier, name='immobilier'),
+    path('invest/', views.invest, name='invest'),
+    path('international/', views.international, name='international'),
+    path('mobility/', views.mobility, name='mobility'),
+    path('solutions/', views.solutions, name='solutions'),
 ]
