@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-)@xcvkze$(y(nkdv)(6euqy3z52$17vfer3x9ovupf^h)^=(nj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["wanala-group.onrender.com"]
+ALLOWED_HOSTS = ["wanala-group.onrender.com", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS += [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,6 +129,13 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'contact@wanala.fr')
 EMAIL_HOST = os.getenv('EMAIL_HOST', '')
