@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-)@xcvkze$(y(nkdv)(6euqy3z52$17vfer3x9ovupf^h)^=(nj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["wanala-group.onrender.com"]
 
 
 # Application definition
