@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -81,9 +82,7 @@
     <!-- Bloc gauche : Image + Citation flottante -->
     <div class="relative reveal">
       <div class="group rounded-xl h-[420px] w-full shadow-sm overflow-hidden transition-shadow duration-500 hover:shadow-2xl">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=900&auto=format&fit=crop"
-             alt="Ismaïla WANE, Fondateur & Président de WANALA Group"
-             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+        <img src="{% static 'images/directeur.png' %}" alt="Ismaïla WANE, Fondateur & Président de WANALA Group" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
       </div>
 
       <!-- Citation flottante -->
@@ -277,12 +276,11 @@
 
       <div class="reveal group bg-white rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
         <div class="h-64 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=500&auto=format&fit=crop"
-               alt="Directrice Générale WANALA Group"
+        <img src="{% static 'images/directeur.png' %}" alt="Ismaïla WANE, Fondateur & Président de WANALA Group" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">               alt="Directeur Générale WANALA Group"
                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
         </div>
         <div class="p-5 text-left">
-          <h3 class="font-semibold text-[#0d1330]">Aïssatou Diallo</h3>
+          <h3 class="font-semibold text-[#0d1330]">Ismaïla WANE</h3>
           <p class="text-amber-500 text-xs uppercase tracking-wide mt-1">Directrice Générale</p>
         </div>
       </div>
@@ -318,7 +316,7 @@
                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
         </div>
         <div class="p-5 text-left">
-          <h3 class="font-semibold text-[#0d1330]">Thomas Lefèvre</h3>
+          <h3 class="font-semibold text-[#0d1330]">Ibrahima Samb</h3>
           <p class="text-amber-500 text-xs uppercase tracking-wide mt-1">Développement International</p>
         </div>
       </div>
@@ -375,18 +373,20 @@
           et investisseurs en facilitant leur accès aux opportunités régionales et internationales.
         </p>
         <div class="grid grid-cols-3 gap-2 mb-4 rounded-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1590064661861-5b5c3e7e13b2?q=80&w=300&auto=format&fit=crop" alt="Bureaux Dakar" class="h-16 w-full object-cover transition-transform duration-500 hover:scale-110">
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSYgI1jAR25fOiHhpS7hkc-wq6y29cuUIuP4UhrLSHBittw82kf" alt="Bureaux Dakar" class="h-16 w-full object-cover transition-transform duration-500 hover:scale-110">
           <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=300&auto=format&fit=crop" alt="Équipe Dakar" class="h-16 w-full object-cover transition-transform duration-500 hover:scale-110">
           <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=300&auto=format&fit=crop" alt="Réunion Dakar" class="h-16 w-full object-cover transition-transform duration-500 hover:scale-110">
         </div>
-        <p class="text-gray-300 text-sm flex items-center gap-2">📍 Villa 8607/B Sicap Sacré cœur 2</p>
+        <p class="text-gray-300 text-sm flex items-center gap-2"> 
+          <i class="fas fa-map-marker-alt"></i>
+           Villa 8607/B Sicap Sacré cœur 2</p>
       </div>
 
       <!-- Paris -->
       <div class="reveal reveal-delay-1 bg-[#141b3a] p-8 mb-2 rounded-xl text-left transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:bg-[#171f45]">
         <div class="flex items-center gap-4 mb-4">
           <div class="w-14 h-14 rounded-full overflow-hidden shrink-0">
-            <img src="https://images.unsplash.com/photo-1502602898470-47894df9b21e?q=80&w=200&auto=format&fit=crop"
+            <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=300&auto=format&fit=crop"
                  alt="Paris, France" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
           </div>
           <div>
@@ -405,7 +405,10 @@
           <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=300&auto=format&fit=crop" alt="Équipe Paris" class="h-16 w-full object-cover transition-transform duration-500 hover:scale-110">
           <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=300&auto=format&fit=crop" alt="Réunion Paris" class="h-16 w-full object-cover transition-transform duration-500 hover:scale-110">
         </div>
-        <p class="text-gray-300 text-sm flex items-center gap-2">📍 33 Rue du Petit Bontemps, 78370 Plaisir</p>
+        <p class="text-gray-300 text-sm flex items-center gap-2">
+          <i class="fas fa-map-marker-alt"></i>
+          33 Rue du Petit Bontemps, 78370 Plaisir
+        </p>
       </div>
     </div>
   </div>

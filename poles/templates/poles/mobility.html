@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -20,6 +21,17 @@
     @keyframes driveIn {
         from { opacity: 0; transform: translateX(-16px); }
         to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes floatHeroImage {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+    }
+
+    .hero-image-card {
+        animation: floatHeroImage 3.6s ease-in-out infinite;
+    }
+    .hero-image-card:hover {
+        transform: translateY(-4px) scale(1.01);
     }
 
     /* Éléments révélés au scroll */
@@ -47,12 +59,18 @@
     <div class="absolute inset-0 bg-gradient-to-r from-[#0d1330] via-[#0d1330]/90 to-[#0d1330]/40"></div>
   </div>
 
-  <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
-    <p class="inline-flex items-center gap-2 text-amber-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5 opacity-0" style="animation: fadeInUp 0.8s ease-out 0.1s forwards;">
+  <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
+    <p class="inline-flex items-center gap-2 text-amber-400 uppercase tracking-[0.3em] text-xs font-semibold mb-5 opacity-0 mx-auto" style="animation: fadeInUp 0.8s ease-out 0.1s forwards;">
       <span class="w-6 h-px bg-amber-400"></span>
       Pôle Mobility
     </p>
-    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 opacity-0" style="animation: fadeInUp 0.8s ease-out 0.25s forwards;">
+    <div class="mb-8 flex justify-center opacity-0" style="animation: fadeInUp 0.8s ease-out 0.2s forwards;">
+      <div class="hero-image-card relative inline-flex items-center justify-center p-3 sm:p-4">
+        <div class="absolute inset-0"></div>
+        <img src="{% static 'images/logo.png' %}" alt="Illustration mobilité Wanala" class="h-32 w-auto sm:h-40 md:h-44 object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.35)]">
+      </div>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 opacity-0 max-w-3xl" style="animation: fadeInUp 0.8s ease-out 0.25s forwards;">
       WANALA <span class="text-amber-400">Mobility</span>
     </h1>
     <p class="text-slate-300 max-w-2xl text-lg leading-8 mb-10 opacity-0" style="animation: fadeInUp 0.8s ease-out 0.4s forwards;">
@@ -60,7 +78,7 @@
       en quête de prestige ou une entreprise exigeante, nous redéfinissons la
       mobilité premium entre le Sénégal et la France.
     </p>
-    <div class="flex flex-wrap gap-4 opacity-0" style="animation: fadeInUp 0.8s ease-out 0.55s forwards;">
+    <div class="flex flex-wrap justify-center gap-4 opacity-0" style="animation: fadeInUp 0.8s ease-out 0.55s forwards;">
       <a href="#solutions"
          class="group inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
         Découvrir nos offres
@@ -280,7 +298,7 @@
       analyse gratuite de vos besoins et de votre parc actuel.
     </p>
 
-    <a href="{% url  'poles:mobility' %}"
+    <a href="{{ whatsapp_link }}" target="_blank" rel="noopener noreferrer"
        class="inline-flex items-center gap-2 bg-[#0d1330] hover:bg-[#161b33] text-white font-semibold px-7 py-3.5 rounded-lg hover:scale-105 transition-all duration-300 mb-8"
        style="animation: pulseRing 2.6s infinite;">
       Contacter un expert mobilité
