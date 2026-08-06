@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-WHATSAPP_NUMBER = "221784751639"
+WHATSAPP_NUMBER = "221773907069"
 WHATSAPP_BASE_URL = f"https://wa.me/{WHATSAPP_NUMBER}?text="
 
 

@@ -87,31 +87,31 @@
 
         <!-- Cartes des 5 pôles -->
         <div class="mt-10 flex flex-wrap justify-center gap-4 opacity-0" style="animation: fadeInUp 0.9s ease-out 0.5s forwards;">
-            <a href="#" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-blue-900/30 transition-all duration-300">
+            <a href="{% url 'poles:mobility' %}" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-blue-900/30 transition-all duration-300">
                 <span class="h-10 w-10 rounded-lg bg-blue-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <i class="fas fa-car text-white"></i>
                 </span>
                 <span class="text-sm text-gray-200">Mobility</span>
             </a>
-            <a href="#" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-green-900/30 transition-all duration-300">
+            <a href="{% url 'poles:solutions' %}" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-green-900/30 transition-all duration-300">
                 <span class="h-10 w-10 rounded-lg bg-green-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <i class="fas fa-broom text-white"></i>
                 </span>
                 <span class="text-sm text-gray-200">Solutions</span>
             </a>
-            <a href="#" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-purple-900/30 transition-all duration-300">
+            <a href="{% url 'poles:immobilier' %}" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-purple-900/30 transition-all duration-300">
                 <span class="h-10 w-10 rounded-lg bg-purple-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <i class="fas fa-building text-white"></i>
                 </span>
                 <span class="text-sm text-gray-200">Immobilier</span>
             </a>
-            <a href="#" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-slate-900/30 transition-all duration-300">
+            <a href="{% url 'poles:invest' %}" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-slate-900/30 transition-all duration-300">
                 <span class="h-10 w-10 rounded-lg bg-slate-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <i class="fas fa-chart-line text-white"></i>
                 </span>
                 <span class="text-sm text-gray-200">Invest</span>
             </a>
-            <a href="#" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-red-900/30 transition-all duration-300">
+            <a href="{% url 'poles:international' %}" class="group w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-4 flex flex-col items-center gap-2 hover:bg-white/10 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-red-900/30 transition-all duration-300">
                 <span class="h-10 w-10 rounded-lg bg-red-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <i class="fas fa-globe text-white"></i>
                 </span>
@@ -168,7 +168,7 @@
                     Des solutions de mobilité complètes pour accompagner particuliers, professionnels
                     et entreprises dans leurs besoins de transport, de véhicules et de gestion de flotte.
                 </p>
-                <a href="#" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
+                <a href="{% url 'poles:mobility' %}" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
             </div>
 
             <!-- Solutions -->
@@ -181,7 +181,7 @@
                     Simplifier votre quotidien grâce à des solutions de services, de Facility Management
                     et de placement de personnel adaptées à chaque besoin.
                 </p>
-                <a href="#" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
+                <a href="{% url 'poles:solutions' %}"  class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
             </div>
 
             <!-- Immobilier -->
@@ -194,7 +194,7 @@
                     Accompagner la gestion, la valorisation et le développement de votre patrimoine
                     grâce à des solutions immobilières sur mesure.
                 </p>
-                <a href="#" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
+                <a href="{% url 'poles:immobilier' %}" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
             </div>
 
             <!-- Invest -->
@@ -207,7 +207,7 @@
                     Accompagner la création, le financement et le développement de projets d'investissement
                     afin de construire un patrimoine durable et créateur de valeur.
                 </p>
-                <a href="#" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
+                <a href="{% url 'poles:invest' %}" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
             </div>
 
             <!-- International -->
@@ -220,7 +220,7 @@
                     Accompagner le développement de vos activités à l'international en créant des
                     opportunités, des partenariats et des solutions adaptées à chaque marché.
                 </p>
-                <a href="#" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
+                <a href="{% url 'poles:international' %}" class="text-amber-600 text-sm font-medium mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">En savoir plus →</a>
             </div>
 
             <!-- Carte CTA -->
@@ -388,7 +388,7 @@
 
                         <input
                             type="text"
-                            placeholder="Jean Dupont"
+                            placeholder="Ibrahima samb"
                             class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none focus:border-amber-500 transition-all duration-300">
                     </div>
 
@@ -399,7 +399,7 @@
 
                         <input
                             type="email"
-                            placeholder="jean@entreprise.com"
+                            placeholder="contact@wanala.com"
                             class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none focus:border-amber-500 transition-all duration-300">
                     </div>
 
