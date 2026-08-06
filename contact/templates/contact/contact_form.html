@@ -11,15 +11,7 @@
     100% { transform: scale(1.08); }
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+ 
 </style>
 
 <section class="relative overflow-hidden bg-[#0d1330]">
@@ -50,7 +42,7 @@
 
 <section class="relative bg-white px-6 pb-20 mt-10">
   <div class="max-w-6xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
-    <div id="contact-form" class="reveal bg-white border border-slate-200 rounded-3xl shadow-[0_20px_70px_rgba(15,23,42,0.08)] p-8 md:p-10">
+    <div id="contact-form" class="bg-white border border-slate-200 rounded-3xl shadow-[0_20px_70px_rgba(15,23,42,0.08)] p-8 md:p-10">
       <div class="mb-6">
         <p class="text-sm font-semibold uppercase tracking-[0.25em] text-amber-600">Formulaire</p>
         <h2 class="text-2xl font-bold text-slate-900 mt-2">Envoyez-nous votre demande</h2>
@@ -120,7 +112,7 @@
       </form>
     </div>
 
-    <div class="reveal bg-[#0d1330] rounded-3xl shadow-[0_20px_70px_rgba(15,23,42,0.12)] p-8 md:p-10 text-white space-y-8">
+    <div class="bg-[#0d1330] rounded-3xl shadow-[0_20px_70px_rgba(15,23,42,0.12)] p-8 md:p-10 text-white space-y-8">
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.25em] text-amber-400">Nos coordonnées</p>
         <h3 class="text-xl font-semibold mt-2">Nous sommes joignables facilement</h3>
@@ -158,22 +150,4 @@
     </div>
   </div>
 </section>
-
-<script>
-  const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach((el) => observer.observe(el));
-  } else {
-    revealEls.forEach((el) => el.classList.add('is-visible'));
-  }
-</script>
-
-{% endblock %}
+{% endblock content %}
